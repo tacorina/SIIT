@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Wild West Hoodie</title>
+        <style>
+            main {
+                top: 50px;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            .column {
+                float: left;
+                width: 33.33%;
+                padding: 10px;
+                height: 100%;
+                text-align: center;
+            }
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            @media screen and (max-width: 600px) {
+                .column {
+                    width: 100%;
+                }
+            }
+            img {
+                height: 400px;
+            }
+            .checked {
+                color: orange;
+            }
+            a {
+                color: grey;
+            }
+            #red {
+                color:red;
+            }
+            .btn {
+                float:both;
+                display: inline-block;
+                background-color:black;
+                border: solid;
+                cursor: pointer;
+                color:white;
+                margin: 4px 2px;
+                padding:15px 32px;
+            }
+            #white {
+                background-color: white;
+                color:black;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="row">
+                <div class="column">
+                    <img src="Woman with bags.png" alt="Woman with shopping bags">
+                    <h2>Wild West Hoodie</h2>
+                    <p>
+                        <span class="fa fa-star checked"></span>
+                        <span>5.0</span>
+                        <a href="#" class="like">
+                            <i class="fa fa-heart" aria-hidden="true"></i></a>
+                        <span>29</span>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <button class="btn">CART</button>
+                    <button class="btn" id="white">VIEW</button>
+                </div>
+                <div class="column">
+                    <img src="Businesman.png" alt="Businesman">
+                    <h2>Wild West Hoodie</h2>
+                    <p>
+                        <span class="fa fa-star checked"></span>
+                        <span>5.0</span>
+                        <a href="#" class="like" id="red">
+                            <i class="fa fa-heart" aria-hidden="true" ></i></a>
+                        <span>29</span>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <button class="btn">CART</button>
+                    <button class="btn" id="white">VIEW</button>
+                </div>
+                <div class="column">
+                    <img src="Brunette woman.png" alt="Brunette woman">
+                    <h2>Wild West Hoodie</h2>
+                    <p>
+                        <span class="fa fa-star checked"></span>
+                        <span>5.0</span>
+                        <a href="#" class="like">
+                            <i class="fa fa-heart" aria-hidden="true"></i></a>
+                        <span>29</span>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                    <button class="btn">CART</button>
+                    <button class="btn" id="white">VIEW</button>
+                </div>
+            </div>
+        </main>   
+    </body>
+</html>

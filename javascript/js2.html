@@ -1,0 +1,311 @@
+<html>
+    <head>
+        <script>
+
+            // 1.O functie "getDigits" care primeste un sir de caractere si returneaza cifrele din sirul respectiv
+            
+            function getDigits(str) {
+                var digits = "";
+                for (var i = 0; i < str.length; i++) {
+                    if (!isNaN(str[i])){
+                        digits += str[i];
+                    }
+                }
+                return digits;
+            }
+
+            console.log(getDigits("123hfot74jd9sj4"));
+
+            // 2. O functie "getLetters" care primeste un sir de caractere si returneaza doar literele din sirul respectiv
+            
+            function getLetters(str) {
+                var letters = "";
+                for (var i = 0; i < str.length; i++) {
+                    if (isNaN(str[i])) {
+                        letters += str[i];
+                    }
+                }
+                return letters;
+            }
+
+            console.log(getLetters("123hfot74jd9sj4"));
+
+            // 3. O functie "getFirst5Letters" care primeste un sir de caractere si returneaza primele 5 litere(daca exista)
+           
+            function getFirst5Letters(str) {
+                var first5 = "";
+                var letters = "";
+                for (var i = 0; i < str.length; i++) {
+                    if (isNaN(str[i])) {
+                        letters += str[i];
+                    }
+                }
+                return first5 = letters.substring(0,5);
+            }
+
+            console.log(getFirst5Letters("123hfot74jd9sj4"));
+
+            // 4. O functie "concatenate" care primeste o lista de siruri de caractere si returneaza sirurile concatenate
+            
+            function concatenate(arr) {
+                var str = "";
+                for (i = 0; i < arr.length; i++) {
+                    str += arr[i] + " ";
+                }
+                return str;
+            }
+
+           /* function concatenate(arr) { 
+                var str = "";  
+                str = arr.join(" ");
+                return str;
+            } */
+
+           console.log(concatenate(["ana", "are", "mere"]));
+
+            /* 5. O functie "getAllDigits" care primeste o lista de siruri de caractere si 
+            returneaza cifrele din toate sirurile */
+
+            function getAllDigits(arr) {
+                var str = "";
+                var digits = "";
+                for (var i = 0; i < arr.length; i++) {
+                    str += arr[i];
+                }
+                for (var j = 0; j < str.length; j++) {
+                    if (!isNaN(str[j])){
+                        digits += str[j] + ',';
+                    }
+                }
+                return digits;
+            }
+
+            /* function getAllDigits(arr) {
+                var str = "";  
+                str = arr.join(" ");
+                var digits = "";
+                for (var i = 0; i < str.length; i++) {
+                    if (!isNaN(str[i])){
+                        digits += str[i];
+                    }
+                }
+                return digits;
+            } */
+
+            console.log(getAllDigits(["2mere","3sarmale","10afine"]));        
+
+            /* 6. O functie "invertAllStrings" care primeste o lista de siruri de caractere si 
+            returneaza lista de siruri de caractere inversate */
+           
+            function invertAllStrings(arr) {
+                var str = "";
+                var strInvers = "";
+                for (var i = 0; i <= arr.length-1; i++) {
+                    str = arr[i];
+                    for (var j = str.length-1; j >= 0; j--) {
+                        strInvers += str[j];
+                    }  
+                    arr[i]=strInvers;
+                    strInvers = "";
+                }
+                return arr;
+            }
+            console.log(invertAllStrings(["ana", "are", "mere"]));
+            
+
+            // 7. Calculeaza factorialul unui numar ("factorial")
+
+            function factorial(n) {
+                var p = 1;
+                for (var i = 1; i <= n; i++) {
+                    p *= i;
+                }
+                return p;
+            }
+
+            console.log(factorial(6));
+            console.log(factorial(1));
+            console.log(factorial(0));
+
+            // 8. Calculeaza cel mai mare divizor comun al 2 numere ("cmmdc")
+            
+            function cmmdc(a,b) {
+                var r = 0;
+                while (b) {
+                    r = a % b;
+                    a = b;
+                    b = r;
+                }
+                return a;
+            } 
+
+            console.log(cmmdc(4,6));
+            console.log(cmmdc(84,196));
+
+            // 9. Calculeaza cel mai mic multiplu comun al 2 numere ("cmmmc")
+            
+            function cmmmc (a,b) {
+                var x = a;
+                var y = b;
+                while (x != y) {
+                    if (x > y) {
+                        x = x - y;
+                    } else {
+                        y = y - x;
+                    }
+                }
+                return (a * b)/x;
+            }
+
+            console.log(cmmmc(3,15));
+            console.log(cmmmc(10,15));
+
+            /* 10. Returneaza un array care sa contina toti divizorii unui numar (ex pentru 64: trebuie 
+            sa returneze [2,4,8,16,32]) ("divizori") */
+            
+            function divizori(n) {
+                var div = [];
+                for (var i = 2; i < n; i++) {
+                    if (n % i === 0) {
+                        div.push(i);
+                    }
+                }
+                return div;
+            }
+
+            console.log(divizori(15));
+            console.log(divizori(6));
+            console.log(divizori(64));
+
+            // 11. O functie care verifica daca un numar este palindrom (ex: 121, 1234321) ("palindrom")
+            
+            function palindrom(n) {
+                var str = n.toString().split('').reverse().join('');
+                return str == n;                  
+            }
+
+            console.log(palindrom(1234321));
+            console.log(palindrom(55));
+            console.log(palindrom(787));
+            console.log(palindrom(123743201)); 
+
+            // 12. O functie care sorteaza numerele pare dintr-un sir de numere primit ca parametru. ("sort")
+        
+            function sort(arr) {
+                var array = [];
+                for (var i = 0; i < arr.length-1; i++) {
+                    if (arr[i] % 2 === 0) {
+                        array.push(arr[i]);
+                    }
+                }
+                array.sort(function(a,b){return a-b});
+                return array;
+            }
+            console.log(sort([1,6,2,99,87,13,8,29]));
+            
+            /* 13. O functie care primeste ca parametru un array de numere. Aceasta sorteaza ascendent numerele 
+            pare si descendent numerele impare, in cadrul aceluiasi array primit ca parameru. ("sortAscDesc") */
+            
+            function sortAscDesc(arr) {
+                var start = 0;
+                var par = [];
+                var end = arr.length-1;
+                var impar = [];
+                while (start <= end) {
+                    if (arr[start] % 2 === 0) {
+                        par.push(arr[start]);
+                        start ++;
+                    } else if (arr[end] % 2 === 1) {
+                        impar.push(arr[end]);
+                        end--;
+                    } else {
+                        var sortare = arr[start];
+                        arr[start] = arr[end];
+                        arr[end] = sortare;
+                    }
+                }
+                par.sort(function(a,b){return a-b});
+                impar.sort(function(a,b){return b-a});
+                return arr = par.concat(impar);
+                
+                // return arr = [par + ',' + impar];
+                // return arr=[...par, ...impar];
+            }
+
+            console.log(sortAscDesc([1,8,3,6,5,2,4,11,12,19,20,17,22]));
+
+            /* 14. O functie care primeste 2 parametri(un array si un numar). Folosind binary search verificati 
+            daca numarul primit ca parametru se gaseste in array. ("binarySearch") */
+
+            function binarySearch(arr,n) {
+                var sort = [];
+                sort = arr.sort(function(a,b){return a-b});
+                var right = sort.length-1;
+                var left = 0;
+                let mid = 0;
+                while (left <= right) {
+                    mid = Math.floor((right + left)/2);
+                    if (sort[mid] === n) {
+                        return true;
+                    } else if (n > sort[mid]) {
+                        left = mid + 1;
+                    } else {
+                        right = mid - 1;
+                    }
+                }
+                return false;
+            }           
+
+            console.log(binarySearch([3,4,6,2,3,645,2,3,6,83,23,13],3));
+            console.log(binarySearch([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],7));
+            console.log(binarySearch([3,4,6,2,3,645,2,3,6,83,23,13],30));
+            
+            /* 15. O functie care implementeaza binary search pentru a verifica daca un numar se regaseste 
+            intr-un array. Dupa ce se termina executia functiei trebuie sa returnati de cate ori s-a apelat 
+            functia recursiv ("countBinarySearch") */
+            
+            function countBinarySearch(arr, n) {
+                var sort = [];
+                sort = arr.sort(function(a,b){return a-b});
+                if (sort.length === 0) {
+                    return false;
+                } else {
+                    var mid = Math.floor(sort.length / 2);
+                    if (sort[mid] === n) {
+                        return true;
+                    } else if (sort[mid] < n) {
+                        return countBinarySearch (sort.slice(mid + 1), n);
+                    } else if (sort[mid] > n) {
+                        return countBinarySearch(sort.slice(0, mid), n);
+                    }
+                }
+            }
+
+            /* function countBinarySearch(array, n) {
+                var arr = [];
+                arr = array.sort(function(a,b){return a-b});
+                return _countBinarySearch(left=0, right=arr.length-1, arr, n);
+                function _countBinarySearch(left, right, arr, n) {
+                    var mid = Math.floor((right + left)/2);
+                    if (arr[mid] === n) {
+                        return mid;
+                    } else if (left === right) {
+                        return -1;
+                    } else if (arr[mid] < n) {
+                        return _countBinarySearch(mid + 1, right, arr, n);
+                    } else if (arr[mid] > n) {
+                        return _countBinarySearch(left, mid-1, arr, n);
+                    }
+                }
+            } */
+
+            console.log(countBinarySearch([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],2));
+            console.log(countBinarySearch([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],36));
+            console.log(countBinarySearch([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],13));
+            console.log(countBinarySearch([3,4,6,2,3,645,2,3,6,83,23,13],3));
+            console.log(countBinarySearch([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],7));
+            console.log(countBinarySearch([3,4,6,2,3,645,2,3,6,83,23,13],30));
+
+        </script>
+    </head>
+</html>
