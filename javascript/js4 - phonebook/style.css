@@ -1,0 +1,51 @@
+ body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-color: #c4db97;
+    
+}
+
+.book {
+   background-color: bisque;
+}
+
+h1 {
+    text-align: center;
+}
+
+.myForm {
+    width: 85%;
+    max-width: 600px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    transform: translate(0%, 40%);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color:#d8eded;
+    text-align: center;
+}
+
+table {
+    border: 1;
+    width: 85%; 
+    max-width: 600px;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(0%, 40%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color:#d8eded;
+    text-align: center;
+}
+
+.submit {
+    width:30%;
+    box-sizing:border-box;
+    
+}
